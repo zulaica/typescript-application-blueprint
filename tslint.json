@@ -10,7 +10,8 @@
         "no-any": true,
         "no-console": [true],
         "only-arrow-functions": [true],
-        "quotemark": [true, "single"]
+        "quotemark": [true, "single"],
+        "semicolon": [false]
     },
     "rulesDirectory": []
 }
