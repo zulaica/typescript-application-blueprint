@@ -12,7 +12,8 @@
         "only-arrow-functions": [true],
         "quotemark": [true, "single"],
         "semicolon": [false],
-        "trailing-comma": [false]
+        "trailing-comma": [false],
+        "triple-equals": [true]
     },
     "rulesDirectory": []
 }
