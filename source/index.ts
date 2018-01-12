@@ -1,2 +1,2 @@
 window.onload = () =>
-  document.body.appendChild(document.createTextNode(`Hello, y'all!`));
+  document.body.appendChild(document.createTextNode(`Hello, y’all!`));
