@@ -11,3 +11,8 @@ const onEventMethod = (
   eventListener: EventListenerOrEventListenerObject,
   options = false
 ) => addEventListener(event, eventListener, options);
+
+interface Node extends OnEventMethodInterface {
+  this: Node;
+}
+Document.prototype.on = onEventMethod;
