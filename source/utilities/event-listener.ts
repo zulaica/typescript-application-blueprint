@@ -16,3 +16,8 @@ interface Node extends OnEventMethodInterface {
   this: Node;
 }
 Document.prototype.on = onEventMethod;
+
+interface Window extends OnEventMethodInterface {
+  this: Window;
+}
+Window.prototype.on = onEventMethod;
