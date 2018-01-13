@@ -1,2 +1,5 @@
-window.onload = () =>
-  document.body.appendChild(document.createTextNode(`Hello, y’all!`));
+import './utilities/event-listener';
+
+window.on('load', () =>
+  document.body.appendChild(document.createTextNode(`Hello, y’all!`))
+);
