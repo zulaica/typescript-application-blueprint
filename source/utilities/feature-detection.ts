@@ -3,7 +3,7 @@ interface SupportForInterface {
 }
 
 const supportFor = (feature: string) => {
-  if (typeof `this.${feature}` !== 'undefined') {
+  if (feature in navigator) {
     return Promise.resolve(true)
   }
   return Promise.reject(false)
