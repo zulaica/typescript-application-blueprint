@@ -10,8 +10,8 @@
     "typescript": "^2.7.2"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --pretty",
     "serve": "python -m SimpleHTTPServer",
-    "watch": "tsc -w"
+    "watch": "tsc --watch --pretty"
   }
 }
