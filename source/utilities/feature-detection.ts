@@ -1,8 +1,8 @@
 interface SupportForInterface {
-  supportFor: (feature: any) => Promise<boolean>
+  supportFor: (feature: string) => Promise<boolean>
 }
 
-const supportFor = (feature: any) => {
+const supportFor = (feature: string) => {
   if (typeof `this.${feature}` !== 'undefined') {
     return Promise.resolve(true)
   }
