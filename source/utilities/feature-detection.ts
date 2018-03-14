@@ -1,9 +1,9 @@
 interface SupportForInterface {
-  supportFor: (feature: any) => void
+  supportFor: (feature: any) => Promise<boolean>
 }
 
 const supportFor = (feature: any) => {
-  if (typeof feature !== 'undefined') {
+  if (typeof `navigator.${feature}` !== 'undefined') {
     return Promise.resolve(true)
   }
   return Promise.reject(false)
