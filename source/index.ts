@@ -15,4 +15,7 @@ window.on('load', () =>
     .then(() =>
       document.body.appendChild(document.createTextNode(`Hello, y’all!`))
     )
+    .catch(() =>
+      document.body.appendChild(document.createTextNode('Nope.'))
+    )
 );
