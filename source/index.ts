@@ -7,7 +7,11 @@
  * https://github.com/Microsoft/TypeScript/issues/16577#issuecomment-309169829
  */
 import './utilities/event-listener.js';
+import supportFor from './utilities/feature-detection.js'
 
 window.on('load', () =>
-  document.body.appendChild(document.createTextNode(`Hello, y’all!`))
+  supportFor(navigator.requestMIDIAccess)
+    .then(() =>
+      document.body.appendChild(document.createTextNode(`Hello, y’all!`))
+    )
 );
