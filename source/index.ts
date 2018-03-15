@@ -1,5 +1,5 @@
 /*
- * Pure ES Module support in browsers requires either a file extension or a js
+ * Native ES Module support in browsers requires either a file extension or a js
  * MIMETYPE to resolve correctly. As a workaround, TSC will resolve an import
  * with a non `.ts` file extension allowing the code to compile with the
  * correct reference.
