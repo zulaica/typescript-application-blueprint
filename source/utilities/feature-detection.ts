@@ -1,9 +1,9 @@
 interface SupportForInterface {
-  supportFor: (feature: string, thing?: object) => Promise<boolean>
+  supportFor: (this: object, feature: string) => Promise<boolean>
 }
 
-function supportFor(feature: string, thing: object = this) {
-  if (feature in thing) {
+function supportFor(this: object, feature: string) {
+  if (feature in this) {
     return Promise.resolve(true)
   }
   return Promise.reject(false)
