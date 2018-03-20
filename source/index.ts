@@ -13,7 +13,11 @@ window.on('load', () =>
   navigator
     .supportFor('requestMIDIAccess')
     .then(
-      () => { document.body.appendChild(document.createTextNode(`Hello, y’all!`)) },
-      () => { document.body.appendChild(document.createTextNode('Nope.')) }
+      () => {
+        document.body.appendChild(document.createTextNode(`Hello, y’all!`))
+      },
+      () => {
+        document.body.appendChild(document.createTextNode('Nope.'))
+      }
     )
 );
