@@ -1,9 +1,9 @@
 interface SupportForInterface {
-  supportFor: (feature: string) => Promise<boolean>
+  supportFor: (feature: string, thing?: object) => Promise<boolean>
 }
 
-const supportFor = (feature: string) => {
-  if (feature in navigator) {
+function supportFor(feature: string, thing: object = this) {
+  if (feature in thing) {
     return Promise.resolve(true)
   }
   return Promise.reject(false)
