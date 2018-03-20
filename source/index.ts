@@ -14,7 +14,7 @@ window.on('load', () =>
     .supportFor('requestMIDIAccess')
     .then(
       () => {
-        document.body.appendChild(document.createTextNode(`Hello, y’all!`))
+        document.body.appendChild(document.createTextNode('Hello, y’all!'))
       },
       () => {
         document.body.appendChild(document.createTextNode('Nope.'))
