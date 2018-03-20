@@ -6,7 +6,7 @@
  *
  * https://github.com/Microsoft/TypeScript/issues/16577#issuecomment-309169829
  */
-import './utilities/event-listener.js';
+import './utilities/event-listener.js'
 import './utilities/feature-detection.js'
 
 window.on('load', () =>
@@ -20,4 +20,4 @@ window.on('load', () =>
         document.body.appendChild(document.createTextNode('Nope.'))
       }
     )
-);
+)
