@@ -12,10 +12,8 @@ import './utilities/feature-detection.js'
 window.on('load', () =>
   navigator
     .supportFor('requestMIDIAccess')
-    .then(() =>
-      document.body.appendChild(document.createTextNode(`Hello, y’all!`))
-    )
-    .catch(() =>
-      document.body.appendChild(document.createTextNode('Nope.'))
+    .then(
+      () => { document.body.appendChild(document.createTextNode(`Hello, y’all!`)) },
+      () => { document.body.appendChild(document.createTextNode('Nope.')) }
     )
 );
