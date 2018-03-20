@@ -1,10 +1,10 @@
 interface SupportForInterface {
-  supportFor: (this: object, feature: string) => Promise<boolean>
+  supportFor: (this: object, feature: string) => Promise<void>
 }
 
 function supportFor(this: object, feature: string) {
   if (feature in this) {
-    return Promise.resolve(true)
+    return Promise.resolve()
   }
   return Promise.reject(false)
 }
