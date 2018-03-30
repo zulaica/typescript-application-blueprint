@@ -14,8 +14,10 @@ window.on('load', () =>
     () => {
       document.body.appendChild(document.createTextNode('Hello, y’all!'));
     },
-    () => {
-      document.body.appendChild(document.createTextNode('Nope.'));
+    feature => {
+      document.body.appendChild(
+        document.createTextNode(`${feature} is not supported.`)
+      );
     }
   )
 );
