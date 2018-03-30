@@ -1,12 +1,26 @@
 interface SupportForInterface {
-  supportFor: (this: object, feature: string) => Promise<void>;
+  supportFor: (this: object, features: string | string[]) => Promise<{}>;
 }
 
-function supportFor(this: object, feature: string) {
-  if (feature in this) {
-    return Promise.resolve();
+function supportFor(this: object, features: string | string[]) {
+  if (typeof features === 'string') {
+    features = [features];
   }
-  return Promise.reject(false);
+
+  let reason = true;
+  let unsupportedFeature: string;
+
+  for (const feature of features) {
+    if (feature in this === false) {
+      reason = false;
+      unsupportedFeature = feature;
+      break;
+    }
+  }
+
+  return new Promise((resolve, reject) => {
+    reason ? resolve(reason) : reject(unsupportedFeature);
+  });
 }
 
 interface Navigator extends SupportForInterface {
