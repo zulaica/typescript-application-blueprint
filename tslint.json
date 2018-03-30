@@ -1,19 +1,18 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {
-        "interface-name": [true, "never-prefix"],
-        "max-line-length": [true, 80],
-        "no-any": true,
-        "no-console": [true],
-        "only-arrow-functions": [true],
-        "quotemark": [true, "single"],
-        "semicolon": [false],
-        "trailing-comma": [false],
-        "triple-equals": [true]
-    },
-    "rulesDirectory": []
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "interface-name": [true, "never-prefix"],
+    "max-line-length": [true, 80],
+    "no-any": true,
+    "no-console": [true],
+    "only-arrow-functions": [true],
+    "quotemark": [true, "single"],
+    "semicolon": [false],
+    "trailing-comma": [false],
+    "triple-equals": [true]
+  },
+  "rulesDirectory": []
 }
