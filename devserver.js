@@ -6,6 +6,11 @@ const server = http.createServer((request, response) => {
   response.end();
 });
 
+function timestamp() {
+  const date = new Date();
+  return date;
+}
+
 server.listen(port);
-console.log(`[${Date.now()}] Starting up development server.`);
+console.log(`[${timestamp()}] Starting up development server.`);
 console.log('Type CTRL-C to stop the development server.');
