@@ -14,9 +14,9 @@ window.on('load', () =>
     () => {
       document.body.appendChild(document.createTextNode('Hello, y’all!'));
     },
-    rejectedFeature => {
+    unsupportedFeature => {
       document.body.appendChild(
-        document.createTextNode(`${rejectedFeature} is not supported.`)
+        document.createTextNode(`${unsupportedFeature} is not supported.`)
       );
     }
   )
