@@ -22,6 +22,6 @@ const timestamp = () => {
 };
 
 server.listen(port);
-console.log('\x1Bc');
+process.stdout.write('\x1Bc ');
 console.log(`${timestamp()} Starting up development server.`);
 console.log('Type CTRL-C to stop the development server.');
