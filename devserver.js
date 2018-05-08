@@ -10,7 +10,14 @@ const server = http.createServer((request, response) => {
   console.log(relativeUri);
   console.log(filepath);
 
-  fs.readFile(filepath, 'binary', (err, file) => {
+  fs.readFile(filepath, (error, file) => {
+    if (error) {
+      response.writeHead(404, { 'Content-Type': 'text/plain' });
+      response.write('404 Not Found');
+      response.end();
+      return;
+    }
+
     response.writeHead(200, { 'Content-Type': 'text/html' });
     response.write(file, 'binary');
     response.end();
