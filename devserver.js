@@ -15,9 +15,9 @@ function timestamp() {
     .toString()
     .padStart(2, '0');
 
-  return `${year}-${month}-${day}`;
+  return `[${year}-${month}-${day}]`;
 }
 
 server.listen(port);
-console.log(`[${timestamp()}] Starting up development server.`);
+console.log(`${timestamp()} Starting up development server.`);
 console.log('Type CTRL-C to stop the development server.');
