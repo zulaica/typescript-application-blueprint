@@ -2,6 +2,7 @@ const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const url = require('url');
+const ipAddress = '127.0.0.1';
 const port = 10001;
 
 const server = http.createServer((request, response) => {
@@ -51,7 +52,12 @@ const timestamp = () => {
 console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
 console.newline = () => process.stdout.write('\n');
 
-server.listen(port);
+server.listen(port, ipAddress, () => {
+  console.log(
+    `Serving on http://${server.address().address}:${server.address().port}/`
+  );
+});
+
 console.clear();
 console.log('Starting up development server.');
 console.info('Type CTRL-C to stop the development server.');
