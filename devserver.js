@@ -15,7 +15,7 @@ function timestamp() {
     .toString()
     .padStart(2, '0');
 
-  return date;
+  return `${year}-${month}-${day}`;
 }
 
 server.listen(port);
