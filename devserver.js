@@ -21,7 +21,11 @@ const timestamp = () => {
   return `[${year}-${month}-${day} ${hour}:${minute}:${second}]`;
 };
 
+console.log = label => {
+  process.stdout.write(`${timestamp()} ${label}\n`);
+};
+
 server.listen(port);
 console.clear();
-console.log(`${timestamp()} Starting up development server.`);
-console.log('Type CTRL-C to stop the development server.');
+console.log('Starting up development server.');
+console.info('Type CTRL-C to stop the development server.');
