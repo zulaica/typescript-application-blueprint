@@ -1,3 +1,4 @@
+const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const url = require('url');
@@ -9,8 +10,11 @@ const server = http.createServer((request, response) => {
   console.log(relativeUri);
   console.log(filepath);
 
-  response.writeHead(200, { 'Content-Type': 'text/html' });
-  response.end();
+  fs.readFile(filepath, 'binary', (err, file) => {
+    response.writeHead(200, { 'Content-Type': 'text/html' });
+    response.write(file, 'binary');
+    response.end();
+  });
 });
 
 const timestamp = () => {
