@@ -53,12 +53,11 @@ console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
 console.newline = () => process.stdout.write('\n');
 
 server.listen(port, ipAddress, () => {
+  console.clear();
+  console.log('Starting up development server.');
   console.log(
     `Serving on http://${server.address().address}:${server.address().port}/`
   );
+  console.info('Type CTRL-C to stop the development server.');
+  console.newline();
 });
-
-console.clear();
-console.log('Starting up development server.');
-console.info('Type CTRL-C to stop the development server.');
-console.newline();
