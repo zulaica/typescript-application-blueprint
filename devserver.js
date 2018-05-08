@@ -14,8 +14,11 @@ const timestamp = () => {
     .getDate()
     .toString()
     .padStart(2, '0');
+  const hour = date.getHours().toString();
+  const minute = date.getMinutes().toString();
+  const second = date.getSeconds().toString();
 
-  return `[${year}-${month}-${day}]`;
+  return `[${year}-${month}-${day} ${hour}:${minute}:${second}]`;
 };
 
 server.listen(port);
