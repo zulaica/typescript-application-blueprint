@@ -8,6 +8,11 @@ const server = http.createServer((request, response) => {
 
 function timestamp() {
   const date = new Date();
+  const day = date
+    .getDate()
+    .toString()
+    .padStart(2, '0');
+
   return date;
 }
 
