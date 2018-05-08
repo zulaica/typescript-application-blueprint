@@ -7,7 +7,8 @@ const port = 10001;
 
 const server = http.createServer((request, response) => {
   const relativeUri = url.parse(request.url).pathname;
-  const filepath = path.join(process.cwd(), relativeUri);
+  let filepath = path.join(process.cwd(), relativeUri);
+  fs.statSync(filepath).isDirectory() ? (filepath += 'index.html') : filepath;
   console.log(relativeUri);
   console.log(filepath);
 
