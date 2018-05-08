@@ -6,7 +6,7 @@ const server = http.createServer((request, response) => {
   response.end();
 });
 
-function timestamp() {
+const timestamp = () => {
   const date = new Date();
   const year = date.getFullYear().toString();
   const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -16,7 +16,7 @@ function timestamp() {
     .padStart(2, '0');
 
   return `[${year}-${month}-${day}]`;
-}
+};
 
 server.listen(port);
 console.log(`${timestamp()} Starting up development server.`);
