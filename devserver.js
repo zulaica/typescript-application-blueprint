@@ -21,9 +21,7 @@ const timestamp = () => {
   return `[${year}-${month}-${day} ${hour}:${minute}:${second}]`;
 };
 
-console.log = label => {
-  process.stdout.write(`${timestamp()} ${label}\n`);
-};
+console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
 
 server.listen(port);
 console.clear();
