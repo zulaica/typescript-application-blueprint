@@ -4,10 +4,11 @@ const url = require('url');
 const port = 10001;
 
 const server = http.createServer((request, response) => {
-  const pathname = url.parse(request.url).pathname;
-  const filepath = path.join(process.cwd(), pathname);
-  console.log(pathname);
+  const relativeUri = url.parse(request.url).pathname;
+  const filepath = path.join(process.cwd(), relativeUri);
+  console.log(relativeUri);
   console.log(filepath);
+
   response.writeHead(200, { 'Content-Type': 'text/html' });
   response.end();
 });
