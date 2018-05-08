@@ -5,26 +5,8 @@ const url = require('url');
 const ipAddress = '127.0.0.1';
 const port = 10001;
 
-const server = http.createServer((request, response) => {
-  const relativeUri = url.parse(request.url).pathname;
-  let filepath = path.join(process.cwd(), relativeUri);
-  fs.statSync(filepath).isDirectory() ? (filepath += 'index.html') : filepath;
-  console.log(relativeUri);
-  console.log(filepath);
-
-  fs.readFile(filepath, (error, data) => {
-    if (error) {
-      response.writeHead(404, { 'Content-Type': 'text/plain' });
-      response.write('404 Not Found');
-      response.end();
-      return;
-    }
-
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.write(data);
-    response.end();
-  });
-});
+console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
+console.newline = () => process.stdout.write('\n');
 
 const timestamp = () => {
   const date = new Date();
@@ -50,8 +32,26 @@ const timestamp = () => {
   return `[${year}-${month}-${day} ${hour}:${minute}:${second}]`;
 };
 
-console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
-console.newline = () => process.stdout.write('\n');
+const server = http.createServer((request, response) => {
+  const relativeUri = url.parse(request.url).pathname;
+  let filepath = path.join(process.cwd(), relativeUri);
+  fs.statSync(filepath).isDirectory() ? (filepath += 'index.html') : filepath;
+  console.log(relativeUri);
+  console.log(filepath);
+
+  fs.readFile(filepath, (error, data) => {
+    if (error) {
+      response.writeHead(404, { 'Content-Type': 'text/plain' });
+      response.write('404 Not Found');
+      response.end();
+      return;
+    }
+
+    response.writeHead(200, { 'Content-Type': 'text/html' });
+    response.write(data);
+    response.end();
+  });
+});
 
 server.listen(port, ipAddress, () => {
   console.clear();
