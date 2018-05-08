@@ -1,10 +1,13 @@
 const http = require('http');
+const path = require('path');
 const url = require('url');
 const port = 10001;
 
 const server = http.createServer((request, response) => {
   const pathname = url.parse(request.url).pathname;
+  const filepath = path.join(process.cwd(), pathname);
   console.log(pathname);
+  console.log(filepath);
   response.writeHead(200, { 'Content-Type': 'text/html' });
   response.end();
 });
