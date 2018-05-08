@@ -49,8 +49,10 @@ const timestamp = () => {
 };
 
 console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
+console.newline = () => process.stdout.write('\n');
 
 server.listen(port);
 console.clear();
 console.log('Starting up development server.');
 console.info('Type CTRL-C to stop the development server.');
+console.newline();
