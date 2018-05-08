@@ -1,7 +1,10 @@
 const http = require('http');
+const url = require('url');
 const port = 10001;
 
 const server = http.createServer((request, response) => {
+  const pathname = url.parse(request.url).pathname;
+  console.log(pathname);
   response.writeHead(200, { 'Content-Type': 'text/html' });
   response.end();
 });
