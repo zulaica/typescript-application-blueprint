@@ -4,6 +4,11 @@ const path = require('path');
 const url = require('url');
 const ipAddress = '127.0.0.1';
 const port = 10001;
+const MIMETYPES = Object.freeze({
+  '.css': 'text/css',
+  '.html': 'text/html',
+  '.js': 'text/javascript'
+});
 
 console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
 console.newline = () => process.stdout.write('\n');
@@ -46,7 +51,8 @@ const server = http.createServer((request, response) => {
       response.end();
       console.log(`${response.statusCode} | ${relativeUri}`);
     } else {
-      response.writeHead(200, { 'Content-Type': 'text/html' });
+      const contentType = MIMETYPES[path.extname(filepath)];
+      response.writeHead(200, { 'Content-Type': contentType });
       response.write(data);
       response.end();
       console.log(`${response.statusCode} | ${relativeUri}`);
