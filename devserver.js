@@ -35,9 +35,9 @@ const timestamp = () => {
 const server = http.createServer((request, response) => {
   const relativeUri = url.parse(request.url).pathname;
   let filepath = path.join(process.cwd(), relativeUri);
-  fs.statSync(filepath).isDirectory() ? (filepath += 'index.html') : filepath;
-  console.log(relativeUri);
-  console.log(filepath);
+  if (fs.existsSync(filepath)) {
+    fs.statSync(filepath).isDirectory() ? (filepath += 'index.html') : filepath;
+  }
 
   fs.readFile(filepath, (error, data) => {
     if (error) {
