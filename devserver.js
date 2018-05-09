@@ -44,12 +44,11 @@ const server = http.createServer((request, response) => {
       response.writeHead(404, { 'Content-Type': 'text/plain' });
       response.write('404 Not Found');
       response.end();
-      return;
+    } else {
+      response.writeHead(200, { 'Content-Type': 'text/html' });
+      response.write(data);
+      response.end();
     }
-
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.write(data);
-    response.end();
   });
 });
 
