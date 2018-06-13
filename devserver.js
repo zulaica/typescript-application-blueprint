@@ -8,7 +8,8 @@ const MIMETYPES = Object.freeze({
   '.css': 'text/css',
   '.html': 'text/html',
   '.js': 'text/javascript',
-  '.map': 'application/octet-stream'
+  '.map': 'application/octet-stream',
+  '.ts': 'application/x-typescript'
 });
 
 console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
