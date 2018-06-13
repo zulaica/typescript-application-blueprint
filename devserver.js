@@ -7,7 +7,8 @@ const port = 10001;
 const MIMETYPES = Object.freeze({
   '.css': 'text/css',
   '.html': 'text/html',
-  '.js': 'text/javascript'
+  '.js': 'text/javascript',
+  '.map': 'application/octet-stream'
 });
 
 console.log = label => process.stdout.write(`${timestamp()} ${label}\n`);
