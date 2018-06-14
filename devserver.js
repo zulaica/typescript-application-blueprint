@@ -7,6 +7,7 @@ const port = 10001;
 const MIMETYPES = Object.freeze({
   '.css': 'text/css',
   '.html': 'text/html',
+  '.ico': 'image/x-icon',
   '.js': 'text/javascript',
   '.map': 'application/octet-stream',
   '.ts': 'application/x-typescript'
