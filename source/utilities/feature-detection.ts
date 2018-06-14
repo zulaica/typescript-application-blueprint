@@ -7,19 +7,20 @@ function supportFor(this: object, features: string | string[]) {
     features = [features];
   }
 
-  let isSupported = true;
+  let isSupported: boolean;
   let unsupportedFeature: string;
 
   for (const feature of features) {
-    if (!(feature in this)) {
-      isSupported = false;
+    isSupported = feature in this;
+
+    if (!isSupported) {
       unsupportedFeature = feature;
       break;
     }
   }
 
   return new Promise((resolve, reject) => {
-    isSupported ? resolve(isSupported) : reject(unsupportedFeature);
+    isSupported ? resolve() : reject(unsupportedFeature);
   });
 }
 
