@@ -11,7 +11,7 @@ function supportFor(this: object, features: string | string[]) {
   let unsupportedFeature: string;
 
   for (const feature of features) {
-    if (feature in this === false) {
+    if (!(feature in this)) {
       reason = false;
       unsupportedFeature = feature;
       break;
