@@ -28,10 +28,10 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(config.port, config.ipAddress, () => {
-  console.clear();
-  console.log('Starting up development server.');
-  console.log(
+  process.stdout.write('\x1Bc');
+  process.stdout.write('Starting up development server.');
+  process.stdout.write(
     `Serving on http://${server.address().address}:${server.address().port}/`
   );
-  console.info('Type CTRL-C to stop the development server.');
+  process.stdout.write('Type CTRL-C to stop the development server.');
 });
