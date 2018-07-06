@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc --pretty",
     "serve":
-      "tsc source/devserver/devserver.ts -m CommonJS --moduleResolution Node --outDir build/devserver/ && node build/devserver/devserver.js",
+      "tsc source/devserver/index.ts -m CommonJS --moduleResolution Node --outDir build/devserver/ && node build/devserver/index.js",
     "watch": "tsc --watch --pretty"
   }
 }
