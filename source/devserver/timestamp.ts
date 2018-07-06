@@ -1,6 +1,6 @@
 const padTimeUnit = str => str.padStart(2, '0');
 
-const timestamp = () => {
+export const timestamp = () => {
   const date = new Date();
   const year = date.getFullYear().toString();
   const month = padTimeUnit((date.getMonth() + 1).toString());
