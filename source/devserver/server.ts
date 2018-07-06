@@ -1,12 +1,10 @@
 import * as fs from 'fs';
 import * as http from 'http';
-import { AddressInfo } from 'net';
 import * as path from 'path';
 import * as url from 'url';
-import * as config from './config';
 import { MIMETYPES } from './mimetypes';
 
-const server = http.createServer((request, response) => {
+export const server = http.createServer((request, response) => {
   const relativeUri = url.parse(request.url as string).pathname as string;
   const filePath: string = path.join(process.cwd(), relativeUri);
   const fullPath: string =
@@ -28,18 +26,4 @@ const server = http.createServer((request, response) => {
       process.stdout.write(`${response.statusCode} | ${relativeUri}\n`);
     }
   });
-});
-
-server.listen(config.port, config.ipAddress, () => {
-  const serverAddress = server.address() as AddressInfo;
-
-  process.stdout.write('\x1Bc');
-  process.stdout.write('Starting up development server.');
-  process.stdout.write('\n');
-  process.stdout.write(
-    `Serving on http://${serverAddress.address}:${serverAddress.port}/`
-  );
-  process.stdout.write('\n');
-  process.stdout.write('Type CTRL-C to stop the development server.');
-  process.stdout.write('\n');
 });
