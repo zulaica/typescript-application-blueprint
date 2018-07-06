@@ -20,7 +20,7 @@ const MIMETYPES: MimeTypesInterface = Object.freeze({
 
 const server = http.createServer((request, response) => {
   const relativeUri = url.parse(request.url as string).pathname as string;
-  let filepath = path.join(process.cwd(), relativeUri);
+  let filepath: string = path.join(process.cwd(), relativeUri);
   if (fs.existsSync(filepath)) {
     fs.statSync(filepath).isDirectory() ? (filepath += 'index.html') : filepath;
   }
