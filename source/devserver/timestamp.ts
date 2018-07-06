@@ -1,23 +1,11 @@
 const timestamp = () => {
   const date = new Date();
   const year = date.getFullYear().toString();
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
-  const day = date
-    .getDate()
-    .toString()
-    .padStart(2, '0');
-  const hour = date
-    .getHours()
-    .toString()
-    .padStart(2, '0');
-  const minute = date
-    .getMinutes()
-    .toString()
-    .padStart(2, '0');
-  const second = date
-    .getSeconds()
-    .toString()
-    .padStart(2, '0');
+  const month = padTimeUnit((date.getMonth() + 1).toString());
+  const day = padTimeUnit(date.getDate().toString());
+  const hour = padTimeUnit(date.getHours().toString());
+  const minute = padTimeUnit(date.getMinutes().toString());
+  const second = padTimeUnit(date.getSeconds().toString());
 
   return `[${year}-${month}-${day} ${hour}:${minute}:${second}]`;
 };
