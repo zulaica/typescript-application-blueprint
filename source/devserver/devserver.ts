@@ -1,7 +1,8 @@
-const fs = require('fs');
-const http = require('http');
-const path = require('path');
-const url = require('url');
+import * as fs from 'fs';
+import * as http from 'http';
+import * as path from 'path';
+import * as url from 'url';
+
 const ipAddress = '127.0.0.1';
 const port = 10001;
 const MIMETYPES = Object.freeze({
