@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as http from 'http';
+import { AddressInfo } from 'net';
 import * as path from 'path';
 import * as url from 'url';
 import * as config from './config';
@@ -28,10 +29,12 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(config.port, config.ipAddress, () => {
+  const serverAddress = server.address() as AddressInfo;
+
   process.stdout.write('\x1Bc');
   process.stdout.write('Starting up development server.');
   process.stdout.write(
-    `Serving on http://${server.address().address}:${server.address().port}/`
+    `Serving on http://${serverAddress.address}:${serverAddress.port}/`
   );
   process.stdout.write('Type CTRL-C to stop the development server.');
 });
