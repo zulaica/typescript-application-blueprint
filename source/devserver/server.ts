@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as http from 'http';
 import * as path from 'path';
 import * as url from 'url';
+import { logger } from './logger';
 import { MIMETYPES } from './mimetypes';
 
 export const server = http.createServer((request, response) => {
@@ -23,7 +24,7 @@ export const server = http.createServer((request, response) => {
       response.writeHead(200, { 'Content-Type': contentType });
       response.write(data);
       response.end();
-      process.stdout.write(`${response.statusCode} | ${relativeUri}\n`);
+      logger.log(`${response.statusCode} | ${relativeUri}`);
     }
   });
 });
