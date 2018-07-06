@@ -1,3 +1,5 @@
+const padTimeUnit = str => str.padStart(2, '0');
+
 const timestamp = () => {
   const date = new Date();
   const year = date.getFullYear().toString();
@@ -9,5 +11,3 @@ const timestamp = () => {
 
   return `[${year}-${month}-${day} ${hour}:${minute}:${second}]`;
 };
-
-const padTimeUnit = str => str.padStart(2, '0');
