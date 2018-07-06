@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "tsc --pretty",
-    "serve": "python -m SimpleHTTPServer",
+    "serve":
+      "tsc source/devserver/devserver.ts -m CommonJS --moduleResolution Node --outDir build/devserver/ && node build/devserver/devserver.js",
     "watch": "tsc --watch --pretty"
   }
 }
