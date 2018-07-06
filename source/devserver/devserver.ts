@@ -15,7 +15,7 @@ const MIMETYPES = Object.freeze({
 });
 
 const server = http.createServer((request, response) => {
-  const relativeUri = url.parse(request.url).pathname;
+  const relativeUri = url.parse(request.url as string).pathname;
   let filepath = path.join(process.cwd(), relativeUri);
   if (fs.existsSync(filepath)) {
     fs.statSync(filepath).isDirectory() ? (filepath += 'index.html') : filepath;
