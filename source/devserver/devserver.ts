@@ -2,21 +2,8 @@ import * as fs from 'fs';
 import * as http from 'http';
 import * as path from 'path';
 import * as url from 'url';
-
-interface MimeTypesInterface {
-  [key: string]: string;
-}
-
-const ipAddress = '127.0.0.1';
-const port = 10001;
-const MIMETYPES: MimeTypesInterface = Object.freeze({
-  '.css': 'text/css',
-  '.html': 'text/html',
-  '.ico': 'image/x-icon',
-  '.js': 'text/javascript',
-  '.map': 'application/octet-stream',
-  '.ts': 'application/x-typescript'
-});
+import * as config from './config';
+import { MIMETYPES } from './mimetypes';
 
 const server = http.createServer((request, response) => {
   const relativeUri = url.parse(request.url as string).pathname as string;
@@ -40,7 +27,7 @@ const server = http.createServer((request, response) => {
   });
 });
 
-server.listen(port, ipAddress, () => {
+server.listen(config.port, config.ipAddress, () => {
   console.clear();
   console.log('Starting up development server.');
   console.log(
