@@ -3,9 +3,13 @@ import * as http from 'http';
 import * as path from 'path';
 import * as url from 'url';
 
+interface MimeTypesInterface {
+  [key: string]: string;
+}
+
 const ipAddress = '127.0.0.1';
 const port = 10001;
-const MIMETYPES = Object.freeze({
+const MIMETYPES: MimeTypesInterface = Object.freeze({
   '.css': 'text/css',
   '.html': 'text/html',
   '.ico': 'image/x-icon',
