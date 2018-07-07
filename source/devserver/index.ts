@@ -6,7 +6,7 @@ import { server } from './server';
 server.listen(config.port, config.ipAddress, () => {
   const serverAddress = server.address() as AddressInfo;
 
-  process.stdout.write('\x1Bc');
+  logger.clear();
   logger.log('Starting up development server.');
   logger.log(
     `Serving on http://${serverAddress.address}:${serverAddress.port}/`
