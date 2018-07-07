@@ -1,3 +1,4 @@
+import { Console } from 'console';
 import { timestamp } from './timestamp';
 
 export const logger = new Console();
