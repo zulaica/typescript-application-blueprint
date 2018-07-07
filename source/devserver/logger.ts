@@ -6,5 +6,6 @@ const errorOutput = process.stderr;
 
 export const logger = new Console(output, errorOutput);
 
+logger.error = message => process.stderr.write(`${timestamp()} ${message}\n`);
 logger.info = message => process.stdout.write(`${message}\n`);
 logger.log = message => process.stdout.write(`${timestamp()} ${message}\n`);
