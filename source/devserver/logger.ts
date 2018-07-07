@@ -1,9 +1,8 @@
 import { Console } from 'console';
-import * as fs from 'fs';
 import { timestamp } from './timestamp';
 
-const output = fs.createWriteStream('./stdout.log');
-const errorOutput = fs.createWriteStream('./stderr.log');
+const output = process.stdout;
+const errorOutput = process.stderr;
 
 export const logger = new Console(output, errorOutput);
 
