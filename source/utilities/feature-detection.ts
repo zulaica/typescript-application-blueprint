@@ -3,9 +3,7 @@ interface SupportForInterface {
 }
 
 function supportFor(this: object, features: string | string[]) {
-  if (typeof features === 'string') {
-    features = [features];
-  }
+  features = Array.isArray(features) ? features : [features]
 
   let isSupported: boolean;
   let unsupportedFeature: string;
