@@ -3,14 +3,11 @@ interface SupportForInterface {
 }
 
 function supportFor(this: object, features: string | string[]) {
-  let isSupported: boolean;
   const unsupportedFeatures: string[] = [];
   features = Array.isArray(features) ? features : [features];
 
   for (const feature of features) {
-    isSupported = feature in this;
-
-    if (!isSupported) {
+    if (!(feature in this)) {
       unsupportedFeatures.push(feature);
     }
   }
