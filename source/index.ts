@@ -25,6 +25,6 @@ const handleUnsupported = (unsupportedFeatures: string[]) => {
 
 window.on('load', () =>
   navigator
-    .supportFor(['requestMIDIAccess', 'DeviceMotionEvent'])
+    .supportFor('requestMIDIAccess')
     .then(handleSuccess, handleUnsupported)
 );
