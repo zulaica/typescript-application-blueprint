@@ -11,7 +11,7 @@ export const server = http.createServer((request, response) => {
   const resolvedFilePath: string =
     fs.existsSync(absoluteFilePath) &&
     fs.statSync(absoluteFilePath).isDirectory()
-      ? absoluteFilePath + 'index.html'
+      ? `${absoluteFilePath}index.html`
       : absoluteFilePath;
 
   fs.readFile(resolvedFilePath, (error, data) => {
