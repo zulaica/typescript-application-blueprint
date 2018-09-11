@@ -15,10 +15,22 @@ window.on('load', () =>
       document.body.appendChild(document.createTextNode('Hello, y’all!'));
     },
     unsupportedFeatures => {
+      document.body.appendChild(document.createElement('dl'));
+      document
+        .getElementsByTagName('dl')[0]
+        .appendChild(document.createElement('dt'));
+      document
+        .getElementsByTagName('dt')[0]
+        .appendChild(document.createTextNode('Unsupported Features'));
       for (const feature of unsupportedFeatures) {
-        document.body.appendChild(
-          document.createTextNode(`${feature} is not supported.`)
-        );
+        document
+          .getElementsByTagName('dl')[0]
+          .appendChild(document.createElement('dd'));
+        document
+          .getElementsByTagName('dd')
+          [unsupportedFeatures.indexOf(feature)].appendChild(
+            document.createTextNode(`${feature}`)
+          );
       }
     }
   )
