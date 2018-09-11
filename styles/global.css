@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+dt::after {
+  content: ':';
+}
+
+dd {
+  margin: 0;
+}
