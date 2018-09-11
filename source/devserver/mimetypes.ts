@@ -8,5 +8,6 @@ export const MIMETYPES: MimeTypesInterface = Object.freeze({
   '.ico': 'image/x-icon',
   '.js': 'text/javascript',
   '.map': 'application/octet-stream',
+  '.png': 'image/png',
   '.ts': 'application/x-typescript'
 });
