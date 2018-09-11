@@ -4,20 +4,19 @@ interface SupportForInterface {
 
 function supportFor(this: object, features: string | string[]) {
   let isSupported: boolean;
-  let unsupportedFeature: string;
+  const unsupportedFeatures: string[] = [];
   features = Array.isArray(features) ? features : [features];
 
   for (const feature of features) {
     isSupported = feature in this;
 
     if (!isSupported) {
-      unsupportedFeature = feature;
-      break;
+      unsupportedFeatures.push(feature);
     }
   }
 
   return new Promise((resolve, reject) => {
-    isSupported ? resolve() : reject(unsupportedFeature);
+    isSupported ? resolve() : reject(unsupportedFeatures);
   });
 }
 

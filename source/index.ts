@@ -14,10 +14,12 @@ window.on('load', () =>
     () => {
       document.body.appendChild(document.createTextNode('Hello, y’all!'));
     },
-    unsupportedFeature => {
-      document.body.appendChild(
-        document.createTextNode(`${unsupportedFeature} is not supported.`)
-      );
+    unsupportedFeatures => {
+      for (const feature of unsupportedFeatures) {
+        document.body.appendChild(
+          document.createTextNode(`${feature} is not supported.`)
+        );
+      }
     }
   )
 );
