@@ -15,17 +15,12 @@ window.on('load', () =>
       document.body.appendChild(document.createTextNode('Hello, y’all!'));
     },
     unsupportedFeatures => {
-      document.body.appendChild(document.createElement('dl'));
-      document
-        .getElementsByTagName('dl')[0]
-        .appendChild(document.createElement('dt'));
-      document
-        .getElementsByTagName('dt')[0]
-        .appendChild(document.createTextNode('Unsupported Features'));
+      const list = document.body.appendChild(document.createElement('dl'));
+      const term = document.createElement('dt');
+      list.appendChild(term);
+      term.appendChild(document.createTextNode('Unsupported Features'));
       for (const feature of unsupportedFeatures) {
-        document
-          .getElementsByTagName('dl')[0]
-          .appendChild(document.createElement('dd'));
+        list.appendChild(document.createElement('dd'));
         document
           .getElementsByTagName('dd')
           [unsupportedFeatures.indexOf(feature)].appendChild(
