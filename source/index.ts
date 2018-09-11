@@ -20,12 +20,8 @@ window.on('load', () =>
       list.appendChild(term);
       term.appendChild(document.createTextNode('Unsupported Features'));
       for (const feature of unsupportedFeatures) {
-        list.appendChild(document.createElement('dd'));
-        document
-          .getElementsByTagName('dd')
-          [unsupportedFeatures.indexOf(feature)].appendChild(
-            document.createTextNode(`${feature}`)
-          );
+        const description = list.appendChild(document.createElement('dd'));
+        description.appendChild(document.createTextNode(`${feature}`));
       }
     }
   )
