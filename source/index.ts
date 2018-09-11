@@ -9,12 +9,13 @@
 import './utilities/event-listener.js';
 import './utilities/feature-detection.js';
 
+const handleSuccess = () =>
+  document.body.appendChild(document.createTextNode(document.title));
+
 window.on('load', () =>
-  navigator.supportFor(['requestMIDIAccess', 'DeviceMotionEvent']).then(
-    () => {
-      document.body.appendChild(document.createTextNode('Hello, y’all!'));
-    },
-    unsupportedFeatures => {
+  navigator
+    .supportFor(['requestMIDIAccess', 'DeviceMotionEvent'])
+    .then(handleSuccess, unsupportedFeatures => {
       const list = document.body.appendChild(document.createElement('dl'));
       const term = document.createElement('dt');
       list.appendChild(term);
@@ -23,6 +24,5 @@ window.on('load', () =>
         const description = list.appendChild(document.createElement('dd'));
         description.appendChild(document.createTextNode(`${feature}`));
       }
-    }
-  )
+    })
 );
