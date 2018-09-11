@@ -16,7 +16,7 @@ function supportFor(this: object, features: string | string[]) {
   }
 
   return new Promise((resolve, reject) => {
-    isSupported ? resolve() : reject(unsupportedFeatures);
+    !unsupportedFeatures.length ? resolve() : reject(unsupportedFeatures);
   });
 }
 
