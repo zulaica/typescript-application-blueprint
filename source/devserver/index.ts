@@ -1,9 +1,9 @@
 import { AddressInfo } from 'net';
-import * as config from './config';
+import { CONFIG } from './config';
 import { logger } from './logger';
 import { server } from './server';
 
-server.listen(config.PORT, config.IPADDRESS, () => {
+server.listen(CONFIG.port, CONFIG.ipAddress, () => {
   const serverAddress = server.address() as AddressInfo;
 
   logger.clear();

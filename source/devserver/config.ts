@@ -1,2 +1,4 @@
-export const IPADDRESS = '127.0.0.1';
-export const PORT = 10001;
+export const CONFIG = Object.freeze({
+  ipAddress: '127.0.0.1',
+  port: 10001
+});
