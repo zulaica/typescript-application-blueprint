@@ -27,4 +27,5 @@ window.on('load', () =>
   navigator
     .supportFor(['requestMIDIAccess', 'mediaDevices'])
     .then(handleSuccess, handleUnsupported)
+    .catch(e => document.body.appendChild(document.createTextNode(e)))
 );
