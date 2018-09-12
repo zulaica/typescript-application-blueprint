@@ -1,8 +1,4 @@
-interface MimeTypesInterface {
-  [key: string]: string;
-}
-
-export const MIMETYPES: MimeTypesInterface = Object.freeze({
+export const MIMETYPES = Object.freeze({
   '.css': 'text/css',
   '.html': 'text/html',
   '.ico': 'image/x-icon',
