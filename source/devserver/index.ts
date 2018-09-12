@@ -3,7 +3,7 @@ import * as config from './config';
 import { logger } from './logger';
 import { server } from './server';
 
-server.listen(config.port, config.ipAddress, () => {
+server.listen(config.PORT, config.IPADDRESS, () => {
   const serverAddress = server.address() as AddressInfo;
 
   logger.clear();
