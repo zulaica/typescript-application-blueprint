@@ -21,7 +21,7 @@ export const server = http.createServer((request, response) => {
       response.end();
       logger.error(`${response.statusCode} | ${relativeFilePath}`);
     } else {
-      const contentType = MIMETYPES[path.extname(resolvedFilePath)];
+      const contentType = MIMETYPES[path.extname(resolvedFilePath).substr(1)];
       response.writeHead(200, { 'Content-Type': contentType });
       response.write(data);
       response.end();
