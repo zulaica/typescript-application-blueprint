@@ -46,7 +46,7 @@ Atmosphere:
 | 🆕 📦         | adding a dependency      | `::pkgnew`              |
 | ⬆️ 📦         | upgrading a dependency   | `::pkgup`               |
 | ⬇️ 📦         | downgrading a dependency | `::pkgdown`             |
-| ⏏️ 📦         | remove a dependency      |
+| ⏏️ 📦         | remove a dependency      | `::pkgout`              |
 | Documentation |                          |
 | 🆕 📝         | adding documentation     | `::docsnew`             |
 | 🔄 📝         | editing documentation    | `::docsedit`            |
