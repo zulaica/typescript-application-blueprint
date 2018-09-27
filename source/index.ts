@@ -9,6 +9,9 @@
 import './utilities/event-listener.js';
 import './utilities/feature-detection.js';
 
+const handleError = (error: Error) =>
+  document.body.appendChild(document.createTextNode(error.message));
+
 const handleSuccess = () =>
   document.body.appendChild(document.createTextNode(document.title));
 
@@ -27,7 +30,5 @@ window.on('load', () =>
   navigator
     .supportFor(['requestMIDIAccess', 'mediaDevices'])
     .then(handleSuccess, handleUnsupported)
-    .catch((error: Error) =>
-      document.body.appendChild(document.createTextNode(error.message))
-    )
+    .catch((error: Error) => handleError(error))
 );
