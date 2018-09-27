@@ -30,5 +30,5 @@ window.on('load', () =>
   navigator
     .supportFor(['requestMIDIAccess', 'mediaDevices'])
     .then(handleSuccess, handleUnsupported)
-    .catch((error: Error) => handleError(error))
+    .catch(error => handleError(error))
 );
