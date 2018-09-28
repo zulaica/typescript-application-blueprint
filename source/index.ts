@@ -9,11 +9,12 @@
 import './utilities/event-listener.js';
 import './utilities/feature-detection.js';
 
-const handleError = (error: Error) =>
-  document.body.appendChild(document.createTextNode(error.message));
+const displayMessage = (message: string) =>
+  document.body.appendChild(document.createTextNode(message));
 
-const handleSuccess = () =>
-  document.body.appendChild(document.createTextNode(document.title));
+const handleError = (error: Error) => displayMessage(error.message);
+
+const handleSuccess = () => displayMessage(document.title);
 
 const handleUnsupported = (unsupportedFeatures: string[]) => {
   const list = document.body.appendChild(document.createElement('dl'));
