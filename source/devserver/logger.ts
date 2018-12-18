@@ -11,8 +11,11 @@ export const logger = new Console(output, errorOutput);
 logger.error = (message: string) =>
   process.stderr.write(
     util.format(
-      `${ANSICOLORS.fgLightRed}%s${ANSICOLORS.fgDefault}`,
-      `${timestamp()} ${message}\n`
+      `${ANSICOLORS.fgDefault}%s${ANSICOLORS.fgLightRed}%s${
+        ANSICOLORS.fgDefault
+      }`,
+      `${timestamp()} `,
+      `${message}\n`
     )
   );
 logger.info = (message: string) =>
@@ -25,7 +28,10 @@ logger.info = (message: string) =>
 logger.log = (message: string) =>
   process.stdout.write(
     util.format(
-      `${ANSICOLORS.fgLightGreen}%s${ANSICOLORS.fgDefault}`,
-      `${timestamp()} ${message}\n`
+      `${ANSICOLORS.fgDefault}%s${ANSICOLORS.fgLightGreen}%s${
+        ANSICOLORS.fgDefault
+      }`,
+      `${timestamp()} `,
+      `${message}\n`
     )
   );
