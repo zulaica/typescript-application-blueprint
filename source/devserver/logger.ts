@@ -1,5 +1,6 @@
 import { Console } from 'console';
 import * as util from 'util';
+import { ANSICOLORS } from './ansicolors';
 import { timestamp } from './timestamp';
 
 const output = process.stdout;
@@ -9,11 +10,22 @@ export const logger = new Console(output, errorOutput);
 
 logger.error = (message: string) =>
   process.stderr.write(
-    util.format('\x1b[91m%s\x1b[0m', `${timestamp()} ${message}\n`)
+    util.format(
+      `${ANSICOLORS.fgLightRed}%s${ANSICOLORS.fgDefault}`,
+      `${timestamp()} ${message}\n`
+    )
   );
 logger.info = (message: string) =>
-  process.stdout.write(util.format('\x1b[34m%s\x1b[0m', `${message}\n`));
+  process.stdout.write(
+    util.format(
+      `${ANSICOLORS.fgLightBlue}%s${ANSICOLORS.fgDefault}`,
+      `${message}\n`
+    )
+  );
 logger.log = (message: string) =>
   process.stdout.write(
-    util.format('\x1b[92m%s\x1b[0m', `${timestamp()} ${message}\n`)
+    util.format(
+      `${ANSICOLORS.fgLightGreen}%s${ANSICOLORS.fgDefault}`,
+      `${timestamp()} ${message}\n`
+    )
   );
