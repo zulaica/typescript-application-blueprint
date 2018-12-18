@@ -12,7 +12,7 @@ You will need the following installed on your computer:
 
 - Clone this repository
   - via HTTPS `$ git clone https://github.com/zulaica/typescript-application-blueprint.git` or
-  - via SSH `$ git@github.com:zulaica/typescript-application-blueprint.git`
+  - via SSH `$ git clone git@github.com:zulaica/typescript-application-blueprint.git`
 - `$ cd typescript-application-blueprint`
 - `$ yarn`
 
