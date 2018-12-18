@@ -5,6 +5,7 @@
 You will need the following installed on your computer:
 
 - [Git](https://git-scm.com/)
+- [Node](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/)
 
 ## Installing
