@@ -2,8 +2,7 @@
 
 ## Prerequesites
 
-You will need the following installed on your computer in order to run
-Atmosphere:
+You will need the following installed on your computer:
 
 - [Git](https://git-scm.com/)
 - [Yarn](https://yarnpkg.com/)
