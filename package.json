@@ -4,7 +4,7 @@
   "author": "David Zulaica <zulaica@gmail.com>",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
-    "@types/node": "10.12.15",
+    "@types/node": "11.9.4",
     "prettier": "1.16.4",
     "tslint": "5.12.1",
     "typescript": "3.3.3333"
