@@ -1,5 +1,5 @@
 interface SupportForInterface {
-  supportFor: (this: object, features: string | string[]) => Promise<{}>;
+  supportFor: (this: object, features: string | string[]) => Promise<object>;
 }
 
 function supportFor(this: object, features: string | string[]) {
