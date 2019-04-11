@@ -21,3 +21,8 @@ interface Navigator extends SupportForInterface {
   this: Navigator;
 }
 Navigator.prototype.supportFor = supportFor;
+
+interface Window extends SupportForInterface {
+  this: Window;
+}
+Window.prototype.supportFor = supportFor;
